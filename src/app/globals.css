@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F7F5;
+  --foreground: #1A1A1A;
+  --brand: #4CAF50;
+  --brand-hover: #43A047;
+  --brand-dim: #2E7D32;
+  --surface: #FFFFFF;
+  --surface-card: #FFFFFF;
+  --border: #E5E7E5;
+  --muted: #6B7280;
+  --silver-leaf: #A8B5A0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-dim: var(--brand-dim);
+  --color-surface: var(--surface);
+  --color-surface-card: var(--surface-card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-silver-leaf: var(--silver-leaf);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5D1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--silver-leaf);
+}
+
+/* Slow base spin for the bowl image */
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 12s linear infinite;
+}
+
+/* Reviews marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
