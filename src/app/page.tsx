@@ -249,12 +249,14 @@ export default function Home() {
         >
           <div className="relative w-[200px] h-[200px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px]">
             {/* Curved text ring — spinning */}
-            <div className="pointer-events-none animate-slow-spin absolute inset-0 flex items-center justify-center">
-              <CircularText
-                text="FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •"
-                radiusRatio={46}
-                fontSize={6}
-              />
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ top: "-24px" }}>
+              <div className="animate-slow-spin h-full w-full">
+                <CircularText
+                  text="FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •"
+                  radiusRatio={42}
+                  fontSize={12}
+                />
+              </div>
             </div>
 
             <Image
