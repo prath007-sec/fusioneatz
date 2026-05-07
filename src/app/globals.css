@@ -62,6 +62,7 @@ html {
 
 .animate-slow-spin {
   animation: slow-spin 12s linear infinite;
+  will-change: transform;
 }
 
 /* Reviews marquee */
