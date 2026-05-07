@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useId } from "react"
 import {
   ChevronDown,
   Star,
@@ -140,6 +141,7 @@ function AnimatedStars({ count, size = "md" }: { count: number; size?: "sm" | "m
 /* ───── Page ───── */
 
 export default function Home() {
+  const textRingId = useId()
   return (
     <>
       {/* ═══════ HERO ═══════ */}
@@ -223,7 +225,7 @@ export default function Home() {
               >
                 <defs>
                   <path
-                    id="bowl-text-ring"
+                    id={textRingId}
                     d="M 50,265 A 215,215 0 1,1 480,265 A 215,215 0 1,1 50,265"
                   />
                 </defs>
@@ -234,7 +236,7 @@ export default function Home() {
                   letterSpacing="8"
                   className="select-none"
                 >
-                  <textPath href="#bowl-text-ring" startOffset="6%">
+                  <textPath href={`#${textRingId}`} startOffset="6%">
                     FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •
                   </textPath>
                 </text>
