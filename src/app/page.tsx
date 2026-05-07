@@ -244,8 +244,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="absolute z-30 hidden md:block"
-          style={{ bottom: "clamp(-250px, -56vw, -770px)" }}
+          className="absolute z-30 hidden md:block md:bottom-[-280px] lg:bottom-[-500px] xl:bottom-[-650px] 2xl:bottom-[-770px]"
         >
           <div className="relative w-[200px] h-[200px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px]">
             <Image
