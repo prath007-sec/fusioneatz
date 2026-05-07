@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useId } from "react"
 import {
   ChevronDown,
   Star,
@@ -138,10 +137,44 @@ function AnimatedStars({ count, size = "md" }: { count: number; size?: "sm" | "m
   )
 }
 
+/* ───── Circular text ───── */
+
+function CircularText({ text, radiusRatio, fontSize }: { text: string; radiusRatio: number; fontSize: number }) {
+  const chars = text.split("")
+  const angleStep = 360 / chars.length
+  const r = radiusRatio / 100
+
+  return (
+    <div className="relative h-full w-full">
+      {chars.map((char, i) => {
+        const angle = i * angleStep
+        const rad = (angle * Math.PI) / 180
+        const x = 50 + 50 * r * Math.sin(rad)
+        const y = 50 - 50 * r * Math.cos(rad)
+
+        return (
+          <span
+            key={i}
+            className="absolute font-semibold text-brand select-none"
+            style={{
+              left: `${x}%`,
+              top: `${y}%`,
+              transform: `translate(-50%, -50%) rotate(${angle}deg)`,
+              fontSize: `${fontSize}px`,
+              letterSpacing: "0",
+            }}
+          >
+            {char}
+          </span>
+        )
+      })}
+    </div>
+  )
+}
+
 /* ───── Page ───── */
 
 export default function Home() {
-  const textRingId = useId()
   return (
     <>
       {/* ═══════ HERO ═══════ */}
@@ -216,31 +249,12 @@ export default function Home() {
         >
           <div className="relative w-[200px] h-[200px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px]">
             {/* Curved text ring — spinning */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ transform: "translateY(-24px)" }}>
-              <svg
-                className="animate-slow-spin"
-                width="100%"
-                height="100%"
-                viewBox="0 0 530 530"
-              >
-                <defs>
-                  <path
-                    id={textRingId}
-                    d="M 50,265 A 215,215 0 1,1 480,265 A 215,215 0 1,1 50,265"
-                  />
-                </defs>
-                <text
-                  fontSize="14"
-                  fontWeight="600"
-                  fill="#4CAF50"
-                  letterSpacing="8"
-                  className="select-none"
-                >
-                  <textPath href={`#${textRingId}`} startOffset="6%">
-                    FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •
-                  </textPath>
-                </text>
-              </svg>
+            <div className="pointer-events-none animate-slow-spin absolute inset-0 flex items-center justify-center">
+              <CircularText
+                text="FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •"
+                radiusRatio={46}
+                fontSize={6}
+              />
             </div>
 
             <Image
