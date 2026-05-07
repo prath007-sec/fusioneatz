@@ -241,24 +241,13 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute z-30"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="absolute z-30 hidden md:block"
           style={{ bottom: "clamp(-250px, -56vw, -770px)" }}
         >
           <div className="relative w-[200px] h-[200px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px]">
-            {/* Curved text ring — spinning */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ top: "-24px" }}>
-              <div className="animate-slow-spin h-full w-full">
-                <CircularText
-                  text="FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •"
-                  radiusRatio={42}
-                  fontSize={12}
-                />
-              </div>
-            </div>
-
             <Image
               src="/spinningbowl.png"
               alt=""
@@ -266,6 +255,17 @@ export default function Home() {
               height={450}
               className="drop-shadow-lg w-full h-full"
             />
+
+            {/* Curved text ring — spinning */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ top: "-24px", zIndex: 10 }}>
+              <div className="animate-slow-spin h-full w-full">
+                <CircularText
+                  text="FRESH • BOLD • MEXICAN STREET FOOD • FRESH • BOLD • MEXICAN STREET FOOD •"
+                  radiusRatio={100}
+                  fontSize={18}
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
