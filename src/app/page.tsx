@@ -149,8 +149,8 @@ function CircularText({ text, radiusRatio, fontSize }: { text: string; radiusRat
       {chars.map((char, i) => {
         const angle = i * angleStep
         const rad = (angle * Math.PI) / 180
-        const x = 50 + 50 * r * Math.sin(rad)
-        const y = 50 - 50 * r * Math.cos(rad)
+        const x = (50 + 50 * r * Math.sin(rad)).toFixed(4)
+        const y = (50 - 50 * r * Math.cos(rad)).toFixed(4)
 
         return (
           <span
