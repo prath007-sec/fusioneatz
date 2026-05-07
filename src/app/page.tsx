@@ -178,75 +178,79 @@ export default function Home() {
   return (
     <>
       {/* ═══════ HERO ═══════ */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-16 text-center">
+      <section className="relative flex min-h-screen flex-col items-center overflow-hidden px-4 pt-16 text-center">
         {/* Background gradient */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand/5 via-transparent to-background" />
         <div className="pointer-events-none absolute top-1/3 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/8 blur-3xl" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="relative"
-        >
-          <h1 className="font-heading text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
-            Fusion
-            <span className="text-brand">Eatz</span>
-          </h1>
-
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-500 sm:text-xl">
-            Bold Mexican street food crafted fresh daily.
-            Hand-pressed tortillas, slow-marinated meats,
-            and salsas made from scratch.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#menu"
-            className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 font-bold text-white shadow-lg shadow-brand/30 transition-all hover:bg-brand-hover hover:shadow-xl hover:shadow-brand/30"
+        {/* Content — centered vertically */}
+        <div className="flex flex-1 flex-col items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            className="relative"
           >
-            View Menu
-            <ChevronDown className="h-4 w-4" />
-          </a>
-          <a
-            href="https://www.google.com/search?q=Fusion+Eatz&sca_esv=8639ec9b40ab010a&rlz=1C5CHFA_en&sxsrf=ANbL-n7UDPaLAue4LzEPJvcOeGmHnVyv6A%3A1778167461343&ei=pa78abnfFK7eruEPgOyp6Qc&biw=1710&bih=952&ved=0ahUKEwj5xYn_vaeUAxUurysGHQB2Kn0Q4dUDCBM&uact=5&oq=Fusion+Eatz&gs_lp=Egxnd3Mtd2l6LXNlcnAiC0Z1c2lvbiBFYXR6MgoQIxiABBiKBRgnMhAQLhhDGK8BGMcBGIAEGIoFMgUQABiABDILEC4YgAQYxwEYrwEyBRAAGIAEMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyHxAuGEMYrwEYxwEYgAQYigUYlwUY3AQY3gQY4ATYAQFI7BJQAFjlEHAAeAGQAQGYAegBoAGyDKoBBjAuMTAuMbgBA8gBAPgBAZgCCqAC8QrCAhAQIxjwBRjJAhiABBiKBRgnwgIIEAAYgAQYsQPCAgoQABiABBiKBRhDwgIQEC4YgAQYigUYQxjHARivAcICBRAuGIAEwgILEC4YgAQYxwEY0QPCAggQLhixAxiABMICDRAAGIAEGIoFGEMYsQPCAg0QLhiABBixAxiDARgKwgILEC4YrwEYxwEYgASYAwDiAwUSATEgQLoGBggBEAEYFJIHBDAuMTCgB9C5AbIHBDAuMTC4B_EKwgcFMC42LjTIBx2ACAE&sclient=gws-wiz-serp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-8 py-3.5 font-semibold text-zinc-600 transition-all hover:border-zinc-400 hover:text-zinc-900"
+            <h1 className="font-heading text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
+              Fusion
+              <span className="text-brand">Eatz</span>
+            </h1>
+
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-500 sm:text-xl">
+              Bold Mexican street food crafted fresh daily.
+              Hand-pressed tortillas, slow-marinated meats,
+              and salsas made from scratch.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
-            <Star className="h-4 w-4 fill-brand text-brand" />
-            4.9★ on Google
-          </a>
-        </motion.div>
+            <a
+              href="#menu"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 font-bold text-white shadow-lg shadow-brand/30 transition-all hover:bg-brand-hover hover:shadow-xl hover:shadow-brand/30"
+            >
+              View Menu
+              <ChevronDown className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.google.com/search?q=Fusion+Eatz&sca_esv=8639ec9b40ab010a&rlz=1C5CHFA_en&sxsrf=ANbL-n7UDPaLAue4LzEPJvcOeGmHnVyv6A%3A1778167461343&ei=pa78abnfFK7eruEPgOyp6Qc&biw=1710&bih=952&ved=0ahUKEwj5xYn_vaeUAxUurysGHQB2Kn0Q4dUDCBM&uact=5&oq=Fusion+Eatz&gs_lp=Egxnd3Mtd2l6LXNlcnAiC0Z1c2lvbiBFYXR6MgoQIxiABBiKBRgnMhAQLhhDGK8BGMcBGIAEGIoFMgUQABiABDILEC4YgAQYxwEYrwEyBRAAGIAEMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyHxAuGEMYrwEYxwEYgAQYigUYlwUY3AQY3gQY4ATYAQFI7BJQAFjlEHAAeAGQAQGYAegBoAGyDKoBBjAuMTAuMbgBA8gBAPgBAZgCCqAC8QrCAhAQIxjwBRjJAhiABBiKBRgnwgIIEAAYgAQYsQPCAgoQABiABBiKBRhDwgIQEC4YgAQYigUYQxjHARivAcICBRAuGIAEwgILEC4YgAQYxwEY0QPCAggQLhixAxiABMICDRAAGIAEGIoFGEMYsQPCAg0QLhiABBixAxiDARgKwgILEC4YrwEYxwEYgASYAwDiAwUSATEgQLoGBggBEAEYFJIHBDAuMTCgB9C5AbIHBDAuMTC4B_EKwgcFMC42LjTIBx2ACAE&sclient=gws-wiz-serp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-8 py-3.5 font-semibold text-zinc-600 transition-all hover:border-zinc-400 hover:text-zinc-900"
+            >
+              <Star className="h-4 w-4 fill-brand text-brand" />
+              4.9★ on Google
+            </a>
+          </motion.div>
 
-        {/* Hero rating badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-400"
-        >
-          {ratings.slice(0, 2).map((r) => (
-            <span key={r.platform} className="flex items-center gap-1.5">
-              <Star className="h-3.5 w-3.5 fill-brand text-brand" />
-              {r.rating} {r.suffix} on {r.platform}
-            </span>
-          ))}
-        </motion.div>
+          {/* Hero rating badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-400"
+          >
+            {ratings.slice(0, 2).map((r) => (
+              <span key={r.platform} className="flex items-center gap-1.5">
+                <Star className="h-3.5 w-3.5 fill-brand text-brand" />
+                {r.rating} {r.suffix} on {r.platform}
+              </span>
+            ))}
+          </motion.div>
+        </div>
 
+        {/* Bowl — sits at bottom of hero, never overlaps content */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="absolute z-30 hidden md:block md:bottom-[-280px] lg:bottom-[-500px] xl:bottom-[-650px] 2xl:bottom-[-770px]"
+          className="hidden md:flex md:items-center md:justify-center md:pb-8"
         >
-          <div className="relative w-[200px] h-[200px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px]">
+          <div className="w-[320px] h-[320px] lg:w-[450px] lg:h-[450px] relative">
             <Image
               src="/spinningbowl.png"
               alt=""
